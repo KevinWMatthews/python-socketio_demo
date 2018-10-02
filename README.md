@@ -1,6 +1,6 @@
 # Python SocketIO
 
-Run a SocketIO server using Python's [SocketIO](https://python-socketio.readthedocs.io/en/stable/) module.
+Run a SocketIO server using the [Python-SocketIO](https://python-socketio.readthedocs.io/en/stable/) module.
 
 
 ## Background
@@ -13,9 +13,14 @@ Python-SocketIO is designed to be WSGI middleware.
 It can sit between a WSGI server (such as `aiohttp` or `eventlet`) and
 a WSGI application (such as `flask`) or it can be a WSGI application itself.
 
-Be wary of the
 
-##
+
+## Links
+
+    * [python-socketio docs](https://python-socketio.readthedocs.io/en/stable/)
+    * [socket.io.client source](https://github.com/socketio/socket.io-client)
+    * [socket.io client API](https://socket.io/docs/client-api/)
+
 
 ## TODO
 
