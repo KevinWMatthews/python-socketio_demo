@@ -14,6 +14,10 @@ It can sit between a WSGI server (such as `aiohttp` or `eventlet`) and
 a WSGI application (such as `flask`) or it can be a WSGI application itself.
 
 
+###
+
+socketio_server.py -> manually load socketio_client.html in a browser
+
 
 ## Links
 

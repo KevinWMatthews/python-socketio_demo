@@ -7,7 +7,15 @@
 	<body>
 		<!-- <h1>SocketIO Client</h1> -->
 		<h4>Log:</h4>
-		<pre id="socketio_log">Run the SocketIO server on localhost:8000</pre>
+		<div>
+			<button type="button" name="btn_send" id="btn_send">Send</button>
+			<button type="button" name="btn_echo" id="btn_echo">Echo</button>
+			<button type="button" name="btn_client_callback" id="btn_client_callback">Client Callback</button>
+			<button type="button" name="btn_request_server_callback" id="btn_request_server_callback">Request Server Callback</button>
+		</div>
+		<div>
+			<pre id="socketio_log">Run the SocketIO server on localhost:8000</pre>
+		</div>
 		<script src="socket.io/socket.io.js" charset="utf-8"></script>
 		<script src="socketio_client.js" charset="utf-8"></script>
 	</body>
