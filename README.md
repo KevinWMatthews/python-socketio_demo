@@ -13,6 +13,9 @@ Python-SocketIO is designed to be WSGI middleware.
 It can sit between a WSGI server (such as `aiohttp` or `eventlet`) and
 a WSGI application (such as `flask`) or it can be a WSGI application itself.
 
+Python-SocketIO can function as middleware below a WSGI compatible server and above a Flask application.
+[flask-socketio](https://flask-socketio.readthedocs.io/en/stable/) is a separate python package that significantly simplifies this process.
+
 
 ###
 
