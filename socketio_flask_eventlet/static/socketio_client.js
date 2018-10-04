@@ -77,7 +77,7 @@ btn_clear.addEventListener('click', function(event) {
 var btn_client_callback = document.getElementById('btn_client_callback');
 btn_client_callback.addEventListener('click', function(event) {
     let data = 'Clicked the Client Callback button';
-    socket.emit('client_callback', data, function(server_rsp1, server_rsp2) {
+    socketIO.emit('client_callback', data, function(server_rsp1, server_rsp2) {
         addToLog(logElement, 'In client callback:');
         addToLog(server_rsp1);
         addToLog(server_rsp2);

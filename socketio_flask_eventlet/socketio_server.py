@@ -1,13 +1,18 @@
 import socketio
-import flask
+from flask import Flask, render_template
 
 SERVER_HOSTNAME = ''
 SERVER_PORT = 5000
 
 sio = socketio.Server(async_mode='threading')
-app = flask.Flask(__name__)
+app = Flask(__name__)
 # Don't overwrite the Flask app variable! It does a lot of stuff for us.
 app.wsgi_app = socketio.Middleware(sio, app.wsgi_app)
+
+@app.route('/')
+def index():
+    """Serve the client-side application."""
+    return render_template('socketio_client.html')
 
 @sio.on('connect')
 def connect(sid, environ):

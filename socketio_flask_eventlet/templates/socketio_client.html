@@ -16,7 +16,7 @@
 			<h4>Log:</h4>
 			<pre id="socketio_log"></pre>
 		</div>
-		<script src="socket.io/socket.io.js" charset="utf-8"></script>
-		<script src="socketio_client.js" charset="utf-8"></script>
+		<script src="{{ url_for('static', filename='socket.io/socket.io.js') }}" charset="utf-8"></script>
+		<script src="{{ url_for('static', filename='socketio_client.js') }}" charset="utf-8"></script>
 	</body>
 </html>
