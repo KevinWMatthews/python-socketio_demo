@@ -5,7 +5,7 @@ from flask import Flask, render_template
 SERVER_HOSTNAME = ''
 SERVER_PORT = 5000
 
-sio = socketio.Server(async_mode='threading')
+sio = socketio.Server(async_mode='eventlet')
 app = Flask(__name__)
 app.wsgi_app = socketio.Middleware(sio, app.wsgi_app)
 
