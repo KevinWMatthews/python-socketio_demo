@@ -1,3 +1,4 @@
+import eventlet, eventlet.wsgi
 import socketio
 from flask import Flask, render_template
 
@@ -6,8 +7,6 @@ SERVER_PORT = 5000
 
 sio = socketio.Server(async_mode='threading')
 app = Flask(__name__)
-# Don't overwrite the Flask app variable! It does a lot of stuff for us.
-app.wsgi_app = socketio.Middleware(sio, app.wsgi_app)
 
 @app.route('/')
 def index():
@@ -38,9 +37,9 @@ def client_callback(sid, data):
     print('client_callback:', data)
     return 'Server Response 1', 'Server Response 2'
 
+
 if __name__ == '__main__':
-    print('Do not run this script directly!')
-    print('Instead, run using:')
-    print('$ export FLASK_APP={}'.format(__file__))
-    print('$ export FLASK_ENV=development')
-    print('$ flask run')
+    # Wrap Flask app in SocketIO's middleware
+    app = socketio.Middleware(sio, app)
+    listener = eventlet.listen((SERVER_HOSTNAME, SERVER_PORT))
+    eventlet.wsgi.server(listener, app)
