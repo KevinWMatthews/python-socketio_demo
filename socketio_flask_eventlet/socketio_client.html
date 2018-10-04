@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>SocketIO Client</title>
+	</head>
+	<body>
+		<div>
+			<h1>SocketIO Client</h1>
+			<button type="button" name="btn_send" id="btn_send">Send</button>
+			<button type="button" name="btn_echo" id="btn_echo">Echo</button>
+			<button type="button" name="btn_client_callback" id="btn_client_callback">Client Callback</button>
+			<button type="button" name="btn_clear" id="btn_clear">Clear</button>
+		</div>
+		<div>
+			<h4>Log:</h4>
+			<pre id="socketio_log"></pre>
+		</div>
+		<script src="socket.io/socket.io.js" charset="utf-8"></script>
+		<script src="socketio_client.js" charset="utf-8"></script>
+	</body>
+</html>
