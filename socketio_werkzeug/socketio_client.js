@@ -8,15 +8,17 @@ function clearLog(logElement) {
 }
 
 function addToLog(logElement, text) {
-    logElement.innerText = text;
+    logElement.innerText += `${text}\n`;
 }
 
 //
 // Connection events
 //
 socketIO.on('connect', function() {
-    console.log('hi');
     addToLog(logElement, `Connected: ${socketIO.id}`);
+});
+socketIO.on('connect_error', function(error) {
+    addToLog(logElement, 'Connect error');
 });
 socketIO.on('connect_timeout', function(error) {        // error object
     addToLog(logElement, `Connect timeout: ${error}`);
@@ -50,10 +52,14 @@ socketIO.on('echo', function(data) {
 var btn_send = document.getElementById('btn_send');
 btn_send.addEventListener('click', function(event) {
     // Sends a 'message' event to the SocketIO server
-    socketIO.send('Clicked the Send button.');
+    data = 'Clicked the Send button.';
+    addToLog(logElement, data);
+    socketIO.send(data);
 })
 
 var btn_echo = document.getElementById('btn_echo');
 btn_echo.addEventListener('click', function(event) {
-    socketIO.emit('echo', 'Clicked the Echo button!');
+    data = 'Clicked the Echo button!';
+    addToLog(logElement, data);
+    socketIO.emit('echo', data);
 });

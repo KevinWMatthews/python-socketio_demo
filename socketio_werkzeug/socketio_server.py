@@ -26,6 +26,7 @@ def message(sid, data):
 
 @sio.on('echo')
 def echo(sid, data):
+    print('echo', data)
     pass
 
 if __name__ == '__main__':
