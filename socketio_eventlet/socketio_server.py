@@ -22,7 +22,7 @@ def disconnect(sid):
 def message(sid, data):
     print('message:', data)
 
-# Eustom event
+# Custom event
 @sio.on('echo')
 def echo(sid, data):
     print('echo:', data)
