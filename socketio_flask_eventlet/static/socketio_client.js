@@ -79,8 +79,8 @@ btn_client_callback.addEventListener('click', (event) => {
     let data = 'Clicked the Client Callback button';
     socketIO.emit('client_callback', data, (server_rsp1, server_rsp2) => {
         addToLog(logElement, 'In client callback:');
-        addToLog(server_rsp1);
-        addToLog(server_rsp2);
+        addToLog(logElement, server_rsp1);
+        addToLog(logElement, server_rsp2);
     });
 });
 
