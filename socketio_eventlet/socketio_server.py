@@ -5,7 +5,7 @@ import socketio
 import eventlet
 
 SERVER_HOSTNAME = ''
-SERVER_PORT = 8000
+SERVER_PORT = 5000
 
 sio = socketio.Server()
 
