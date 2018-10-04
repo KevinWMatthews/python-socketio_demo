@@ -39,12 +39,12 @@ socketIO.on('reconnect', function(attemptNumber) {
 //
 // 'message' is the default event for a SocketIO server's send() call.
 socketIO.on('message', function(data) {
-    addToLog(logElement, `Sent message: ${data}`);
+    addToLog(logElement, `Received message: ${data}`);
 });
 
 // Custom event
 socketIO.on('echo', function(data) {
-    addToLog(logElement, `Sent message: ${data}`);
+    addToLog(logElement, `Received echo: ${data}`);
 });
 
 //
