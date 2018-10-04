@@ -65,6 +65,11 @@ btn_echo.addEventListener('click', function(event) {
     socketIO.emit('echo', data);
 });
 
+var btn_clear = document.getElementById('btn_clear');
+btn_clear.addEventListener('click', function(event) {
+    clearLog(logElement);
+});
+
 window.onload = function() {
     addToLog(logElement, `Run the SocketIO server on ${socketIOUrl}`);
 }
