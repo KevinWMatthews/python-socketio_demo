@@ -7,6 +7,7 @@ SERVER_PORT = 5000
 
 sio = socketio.Server(async_mode='threading')
 app = Flask(__name__)
+app.wsgi_app = socketio.Middleware(sio, app.wsgi_app)
 
 @app.route('/')
 def index():
@@ -39,7 +40,5 @@ def client_callback(sid, data):
 
 
 if __name__ == '__main__':
-    # Wrap Flask app in SocketIO's middleware
-    app = socketio.Middleware(sio, app)
     listener = eventlet.listen((SERVER_HOSTNAME, SERVER_PORT))
-    eventlet.wsgi.server(listener, app)
+    eventlet.wsgi.server(listener, app.wsgi_app)
