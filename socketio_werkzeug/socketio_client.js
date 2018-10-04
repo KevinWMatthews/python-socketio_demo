@@ -1,5 +1,5 @@
 // This opens and connects the socketIO for you (though you can do this manually)
-const socketIO = io('http://localhost:8000');
+const socketIO = io('http://localhost:5000');
 
 var logElement = document.getElementById('socketio_log');
 
