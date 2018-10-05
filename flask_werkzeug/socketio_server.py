@@ -29,6 +29,7 @@ def echo(sid, data):
     sio.emit('echo', data)
 
 if __name__ == '__main__':
+    # app.run()
     print('Do not run this script directly!')
     print('Instead, run using:')
     print('$ export FLASK_APP={}'.format(__file__))
